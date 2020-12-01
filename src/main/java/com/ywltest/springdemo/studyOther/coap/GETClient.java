@@ -1,15 +1,11 @@
-package com.ywltest.springdemo.coap;
+package com.ywltest.springdemo.studyOther.coap;
 
 import org.eclipse.californium.core.*;
-import org.eclipse.californium.core.coap.CoAP;
-import org.eclipse.californium.core.server.resources.CoapExchange;
 import org.eclipse.californium.elements.exception.ConnectorException;
 
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 /**
  * @author yangWenlong

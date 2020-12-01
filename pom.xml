@@ -46,6 +46,7 @@
                 </exclusion>
             </exclusions>
         </dependency>
+        <!--coap协议核心模块-->
         <dependency>
             <groupId>org.eclipse.californium</groupId>
             <artifactId>californium-core</artifactId>
