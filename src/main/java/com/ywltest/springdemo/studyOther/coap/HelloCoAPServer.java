@@ -1,6 +1,5 @@
-package com.ywltest.springdemo.coap;
+package com.ywltest.springdemo.studyOther.coap;
 
-import org.eclipse.californium.core.CoapClient;
 import org.eclipse.californium.core.CoapResource;
 import org.eclipse.californium.core.CoapServer;
 import org.eclipse.californium.core.coap.CoAP;
