@@ -57,6 +57,7 @@
             <version>29.0-jre</version>
         </dependency>
         <!-- ehcache 相关依赖  -->
+        <!--参考：==>https://www.cnblogs.com/myseries/p/11370109.html-->
         <dependency>
             <groupId>net.sf.ehcache</groupId>
             <artifactId>ehcache</artifactId>
