@@ -1,5 +1,6 @@
 package com.ywltest.springdemo.util;
 
+import com.ywltest.springdemo.domain.model.User;
 import lombok.extern.slf4j.Slf4j;
 import net.sf.ehcache.Cache;
 import net.sf.ehcache.CacheManager;
@@ -118,5 +119,12 @@ public class EhCacheUtil {
             e.printStackTrace();
             log.error("删除缓存数据失败：{}",e.getMessage());
         }
+    }
+
+    public static void main(String[] args) {
+        EhCacheUtil ehCacheUtil = EhCacheUtil.getInstance();
+        ehCacheUtil.put(EhCacheUtil.TAXI_CACHE, EhCacheUtil.GROUP_VEHICLE_TREE_KEY,1);
+        User user1 = (User) ehCacheUtil.get(EhCacheUtil.TAXI_CACHE, EhCacheUtil.GROUP_VEHICLE_TREE_KEY);
+//        logger.info("\n =====>【{}】",count);
     }
 }
