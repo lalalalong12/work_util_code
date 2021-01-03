@@ -19,7 +19,7 @@ public class ApplicationRunnerImpl implements ApplicationRunner {
     private static final Logger log = LoggerFactory.getLogger(ApplicationRunnerImpl.class);
 
     @Override
-    public void run(ApplicationArguments args) throws Exception {
+    public void run(ApplicationArguments args) {
         System.out.println("application start...");
 
         try {

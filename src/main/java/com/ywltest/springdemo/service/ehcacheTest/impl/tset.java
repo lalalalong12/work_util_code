@@ -1,10 +1,10 @@
-package com.ywltest.springdemo.service.impl;
+package com.ywltest.springdemo.service.ehcacheTest.impl;
 
 import cn.hutool.http.HttpUtil;
 
 /**
  * @ProjectName: work_util_code
- * @Package: com.ywltest.springdemo.service.impl
+ * @Package: com.ywltest.springdemo.service.ehcacheTest.impl
  * @ClassName: tset
  * @Author: yangwenlongb
  * @Description: ${description}

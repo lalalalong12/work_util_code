@@ -1,4 +1,4 @@
-package com.ywltest.springdemo.studyOther.coap;
+package com.ywltest.springdemo.service.coapTest;
 
 import org.eclipse.californium.core.*;
 import org.eclipse.californium.elements.exception.ConnectorException;
@@ -27,4 +27,6 @@ public class GETClient {
             System.out.println(Utils.prettyPrint(response));  //打印格式良好的输出
         }
     }
+
+
 }
