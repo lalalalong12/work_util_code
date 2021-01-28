@@ -27,5 +27,8 @@ public class ApplicationRunnerImpl implements ApplicationRunner {
         } catch (UnknownHostException var8) {
             var8.printStackTrace();
         }
+
+
+
     }
 }
