@@ -23,11 +23,9 @@ import org.springframework.util.concurrent.ListenableFutureCallback;
  * @Version: 1.0
  */
 @Component
-//@Slf4j
+@Slf4j
 public class KafkaProducer {
 
-
-    private static final Logger log = LoggerFactory.getLogger(KafkaProducer.class);
     @Autowired
     private KafkaTemplate<String, Object> kafkaTemplate;
 
