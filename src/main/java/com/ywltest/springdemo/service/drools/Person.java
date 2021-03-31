@@ -1,8 +1,8 @@
-package com.ywltest.springdemo.drools;
+package com.ywltest.springdemo.service.drools;
 
 /**
  * @ProjectName: work_util_code
- * @Package: com.ywltest.springdemo.drools
+ * @Package: com.ywltest.springdemo.service.drools
  * @ClassName: person
  * @Author: yangwenlongb
  * @Description: ${description}

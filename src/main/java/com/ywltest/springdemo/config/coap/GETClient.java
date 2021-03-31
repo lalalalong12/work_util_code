@@ -1,4 +1,4 @@
-package com.ywltest.springdemo.coap;
+package com.ywltest.springdemo.config.coap;
 
 import org.eclipse.californium.core.*;
 import org.eclipse.californium.elements.exception.ConnectorException;

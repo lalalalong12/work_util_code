@@ -1,6 +1,6 @@
 package com.ywltest.springdemo.service;
 
-import com.ywltest.springdemo.influxDb.InfluxDBConnect;
+import com.ywltest.springdemo.config.influxDb.InfluxDBConnect;
 import org.influxdb.dto.QueryResult;
 import org.junit.Test;
 import org.junit.runner.RunWith;

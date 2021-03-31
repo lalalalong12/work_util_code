@@ -1,4 +1,4 @@
-package com.ywltest.springdemo.service;
+package com.ywltest.springdemo.service.test;
 
 /**
  * @author yangWenlong

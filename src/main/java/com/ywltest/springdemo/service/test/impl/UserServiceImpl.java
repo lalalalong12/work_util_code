@@ -1,6 +1,6 @@
-package com.ywltest.springdemo.service.impl;
+package com.ywltest.springdemo.service.test.impl;
 
-import com.ywltest.springdemo.service.UserService;
+import com.ywltest.springdemo.service.test.UserService;
 
 /**
  * @author yangWenlong

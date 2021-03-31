@@ -1,7 +1,7 @@
-package com.ywltest.springdemo.kafka.config;
+package com.ywltest.springdemo.config.kafka.config;
 
 
-import com.ywltest.springdemo.kafka.constants.KafkaConsts;
+import com.ywltest.springdemo.config.kafka.constants.KafkaConsts;
 import org.springframework.boot.autoconfigure.kafka.KafkaProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;

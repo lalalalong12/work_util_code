@@ -2,21 +2,24 @@ package com.ywltest.springdemo.service;
 
 import com.ywltest.springdemo.SpringdemoApplicationTests;
 import com.ywltest.springdemo.domain.dto.DataSendDto;
-import com.ywltest.springdemo.drools.Person;
-import com.ywltest.springdemo.kafka.KafkaProducer;
+import com.ywltest.springdemo.service.drools.Person;
+import com.ywltest.springdemo.config.kafka.KafkaProducer;
 
 
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.kie.api.KieServices;
-import org.kie.api.io.ResourceType;
+import org.kie.api.builder.KieBuilder;
+import org.kie.api.builder.KieFileSystem;
+import org.kie.api.builder.model.KieBaseModel;
+import org.kie.api.builder.model.KieModuleModel;
+import org.kie.api.conf.EventProcessingOption;
 import org.kie.api.runtime.KieContainer;
 import org.kie.api.runtime.KieSession;
+import org.kie.internal.conf.MultithreadEvaluationOption;
 import org.kie.internal.utils.KieHelper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.junit4.SpringRunner;
 
 
 /**
@@ -60,7 +63,7 @@ public class UserServiceTest extends SpringdemoApplicationTests {
     @Test
     public void ruleStringTest() throws Exception {
 
-        String myRule = "import com.ywltest.springdemo.drools.Person\n" +
+        String myRule = "import com.ywltest.springdemo.service.drools.Person\n" +
                 "\n" +
                 "dialect  \"mvel\"\n" +
                 "\n" +
@@ -73,20 +76,54 @@ public class UserServiceTest extends SpringdemoApplicationTests {
 
         KieHelper helper = new KieHelper();
 
-        helper.addContent(myRule, ResourceType.DRL);
+        String kName = "drools";
+        KieServices ks = helper.ks;
+//
+        helper.ks.newKieBaseConfiguration().setOption(MultithreadEvaluationOption.YES);
+        // 创建kiemodule xml对应的class
+        KieModuleModel kieModuleModel = helper.ks.newKieModuleModel();
+        // 创建KieFileSystem虚拟文件系统
+        // 添加具体的KieBase标签
+        KieBaseModel kieBaseModel = kieModuleModel.newKieBaseModel(kName).
+                // kie fileSystem 中资源文件的文件夹
+                        addPackage(kName);
+        // 设置流形式读取
+        kieBaseModel.setEventProcessingMode(EventProcessingOption.STREAM);
 
-        KieSession ksession = helper.build().newKieSession();
+        // <KieBase></KieBase>标签添加KieSession属性
+        kieBaseModel.newKieSessionModel(kName);
+
+        // 添加kiemodule.xml文件到虚拟文件系统
+        String kieModuleModelXml = kieModuleModel.toXML();
+
+        KieFileSystem kieFileSystem = helper.kfs.writeKModuleXML(kieModuleModelXml);
+
+
+//        helper.addContent(myRule, ResourceType.DRL).build();
+
+         helper.addContent(myRule, "001").build();
+        KieBuilder kieBuilder = helper.ks.newKieBuilder(helper.kfs).buildAll();
+        KieSession kieSession = helper.build().newKieSession();
+//
+//        KieSession ksession = helper.build().newKieSession();
+
+//
+//        helper.kfs.delete("src/main/resources/"+"001");
+//        System.out.println("delete");
+
+        KieSession drools = helper.getKieContainer().newKieSession();
+
 
         Person person = new Person();
 
         person.setAge(12);
         person.setName("Test");
 
-        ksession.insert(person);
+        kieSession.insert(person);
 
-        ksession.fireAllRules();
+        kieSession.fireAllRules();
 
-        ksession.dispose();
+        kieSession.dispose();
     }
 
     @Test
@@ -104,6 +141,7 @@ public class UserServiceTest extends SpringdemoApplicationTests {
         statefulKieSession.fireAllRules();
         statefulKieSession.dispose();
     }
+
 
 }
 

@@ -1,4 +1,4 @@
-package com.ywltest.springdemo.coap;
+package com.ywltest.springdemo.config.coap;
 
 import org.eclipse.californium.core.CoapResource;
 import org.eclipse.californium.core.CoapServer;

@@ -1,11 +1,9 @@
-package com.ywltest.springdemo.kafka;
+package com.ywltest.springdemo.config.kafka;
 
 
 import com.ywltest.springdemo.domain.dto.DataSendDto;
-import com.ywltest.springdemo.kafka.constants.KafkaConsts;
+import com.ywltest.springdemo.config.kafka.constants.KafkaConsts;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.support.SendResult;

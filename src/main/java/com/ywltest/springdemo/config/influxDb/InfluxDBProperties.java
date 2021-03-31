@@ -1,4 +1,4 @@
-package com.ywltest.springdemo.influxDb;
+package com.ywltest.springdemo.config.influxDb;
 
 import lombok.Data;
 import org.hibernate.validator.constraints.URL;

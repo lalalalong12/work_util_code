@@ -8,7 +8,7 @@
 
     <defaultCache
             maxElementsInMemory="20000"
-            eternal="true"
+            eternal="false"
             timeToIdleSeconds="120"
             timeToLiveSeconds="120"
             overflowToDisk="true"
@@ -35,11 +35,11 @@
            diskExpiryThreadIntervalSeconds="120"/>
 
 
-    <cache name="test1"
-           maxElementsInMemory="1"
-           eternal="true"
-           overflowToDisk="true"
-           diskPersistent="true"
-    />
+    <!--<cache name="test1"-->
+           <!--maxElementsInMemory="1"-->
+           <!--eternal="true"-->
+           <!--overflowToDisk="true"-->
+           <!--diskPersistent="true"-->
+    <!--/>-->
 
 </ehcache>

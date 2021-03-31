@@ -1,7 +1,7 @@
-package com.ywltest.springdemo.kafka.handler;
+package com.ywltest.springdemo.config.kafka.handler;
 
 
-import com.ywltest.springdemo.kafka.constants.KafkaConsts;
+import com.ywltest.springdemo.config.kafka.constants.KafkaConsts;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

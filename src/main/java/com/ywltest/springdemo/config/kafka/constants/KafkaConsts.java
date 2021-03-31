@@ -1,4 +1,4 @@
-package com.ywltest.springdemo.kafka.constants;
+package com.ywltest.springdemo.config.kafka.constants;
 
 /**
  * <p>
