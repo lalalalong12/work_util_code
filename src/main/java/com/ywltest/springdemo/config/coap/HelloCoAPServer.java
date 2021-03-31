@@ -11,6 +11,8 @@ import java.util.Date;
 /**
  * @author yangWenlong
  * @date 2020/11/30- ${time}
+ *
+ * coapserver示例
  */
 public class HelloCoAPServer {
 

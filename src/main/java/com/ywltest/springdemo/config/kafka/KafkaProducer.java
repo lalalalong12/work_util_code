@@ -30,7 +30,6 @@ public class KafkaProducer {
     private static boolean flag;
 
     public boolean send(DataSendDto dataSendDto) {
-        log.debug("ddddddddddddddd");
 
         log.debug("kafka准备发送消息为：{}",  dataSendDto.getContent());
 
