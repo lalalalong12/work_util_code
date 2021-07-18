@@ -1,10 +1,12 @@
 package com.ywltest.springdemo.controller;
 
 import cn.hutool.http.HttpUtil;
+import com.ywltest.springdemo.domain.dto.PasswordInfoDTO;
 import com.ywltest.springdemo.domain.model.User;
 import com.ywltest.springdemo.mapper.UserMapper;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.jasypt.intf.service.JasyptStatelessService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -24,16 +26,27 @@ import java.util.Map;
 @RequestMapping("/api/user")
 @Api(tags = "查询用户信息")
 public class UserController {
-//    @Autowired
-//    JdbcTemplate jdbcTemplate;
+    @Autowired
+    JdbcTemplate jdbcTemplate;
 
     @PostMapping("/all")
     @ApiOperation("测试")
     public Object restPage(@RequestBody User username) throws Exception {
-//        final List<Map<String, Object>> map = jdbcTemplate.queryForList("select * from users");
+        final List<Map<String, Object>> map = jdbcTemplate.queryForList("select * from user");
         //http调用  auth以后为header固定值
-        String s = HttpUtil.get("www.baidu.com");
+//        String s = HttpUtil.get("www.baidu.com");
 
-        return  s;
+        return  map;
     }
+
+
+    @PostMapping("/encrypt")
+    @ApiOperation("测试")
+    public Object restPage(@RequestBody PasswordInfoDTO passwordInfoDTO) throws Exception {
+        JasyptStatelessService service = new JasyptStatelessService();
+        String input = passwordInfoDTO.getInput();
+
+        return service.encrypt(input, passwordInfoDTO.getSalt(), (String)null, (String)null, "PBEWithMD5AndDES", (String)null, (String)null, (String)null, (String)null, (String)null, (String)null, (String)null, (String)null, (String)null, (String)null, (String)null, (String)null, (String)null, (String)null,(String)null, (String)null, (String)null, (String)null, (String)null, (String)null);
+    }
+
 }

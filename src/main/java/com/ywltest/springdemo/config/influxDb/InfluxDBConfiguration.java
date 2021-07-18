@@ -18,16 +18,16 @@ public class InfluxDBConfiguration {
     @Autowired
     private InfluxDBProperties influxDBProperties;
 
-    @Bean
-    public InfluxDBConnect getInfluxDBConnect() {
-        InfluxDBConnect influxDB = new InfluxDBConnect(influxDBProperties.getUserName(), influxDBProperties.getPassword(),
-                influxDBProperties.getUrl(), influxDBProperties.getDatabase(), influxDBProperties.getRetentionPolicy(),
-                influxDBProperties.getRetentionPolicyTime());
-
-        influxDB.influxDbBuild();
-
-        influxDB.createRetentionPolicy();
-        log.info("init influxdb::[{}]", influxDBProperties);
-        return influxDB;
-    }
+//    @Bean
+//    public InfluxDBConnect getInfluxDBConnect() {
+//        InfluxDBConnect influxDB = new InfluxDBConnect(influxDBProperties.getUserName(), influxDBProperties.getPassword(),
+//                influxDBProperties.getUrl(), influxDBProperties.getDatabase(), influxDBProperties.getRetentionPolicy(),
+//                influxDBProperties.getRetentionPolicyTime());
+//
+//        influxDB.influxDbBuild();
+//
+//        influxDB.createRetentionPolicy();
+//        log.info("init influxdb::[{}]", influxDBProperties);
+//        return influxDB;
+//    }
 }
