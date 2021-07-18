@@ -7,16 +7,38 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="work_util_code" />
+        <module name="kafka-demo-code" />
+        <module name="influx-demo-code" />
+        <module name="drools-demo-code" />
+        <module name="algorithm-demo-code" />
+        <module name="mqtt-demo-code" />
+        <module name="work-manage-impl" />
+        <module name="base-framework-code" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="algorithm-demo-code" target="1.8" />
+      <module name="base-framework-code" target="1.8" />
+      <module name="drools-demo-code" target="1.8" />
+      <module name="influx-demo-code" target="1.8" />
+      <module name="kafka-demo-code" target="1.8" />
+      <module name="mqtt-demo-code" target="1.8" />
+      <module name="work-manage-code" target="1.8" />
+      <module name="work-manage-impl" target="1.8" />
       <module name="work_util_code" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="work_util_code" options="-parameters" />
+      <module name="algorithm-demo-code" options="-parameters -parameters" />
+      <module name="base-framework-code" options="-parameters -parameters" />
+      <module name="drools-demo-code" options="-parameters -parameters" />
+      <module name="influx-demo-code" options="-parameters -parameters" />
+      <module name="kafka-demo-code" options="-parameters -parameters" />
+      <module name="mqtt-demo-code" options="-parameters -parameters" />
+      <module name="work-manage-code" options="-parameters -parameters" />
+      <module name="work-manage-impl" options="-parameters -parameters" />
+      <module name="work_util_code" options="" />
     </option>
   </component>
 </project>
